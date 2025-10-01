@@ -6,16 +6,18 @@
     <title>СУББОТНИК — Сквош сообщество</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cruinn:wght@400;500;600;700;900&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="icon" type="image/jpeg" href="assets/subbotnik-light.jpeg" />
+    <link rel="shortcut icon" type="image/jpeg" href="assets/subbotnik-light.jpeg" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
       <div class="container header-inner">
-        <div class="logo">СУББОТНИК</div>
+        <div class="logo-wrapper">
+          <a class="logo" href="#about" aria-label="СУББОТНИК на главную">
+            <img src="assets/subbotnik-light.jpeg" alt="Логотип СУББОТНИК" />
+          </a>
+        </div>
         <nav class="main-nav">
           <a href="#about">О нас</a>
           <a href="#play-days">Игровые дни</a>
@@ -36,15 +38,32 @@
             <p class="hero-text">
               Мы выращиваем новичков в победителей, создаём безопасную среду для роста и празднуем каждый успех.
             </p>
-            <div class="hero-actions">
+            <!-- <div class="hero-actions">
               <a class="primary" href="#play-days">К расписанию</a>
               <a class="secondary" href="#community">В комьюнити</a>
-            </div>
+            </div> -->
           </div>
           <div class="hero-visual">
-            <figure class="hero-logo">
-              <img src="assets/subbotnik.jpeg" alt="СУББОТНИК" />
-            </figure>
+            <div class="photo-carousel">
+              <div class="carousel-container">
+                <img src="assets/photo.jpg" alt="СУББОТНИК" class="carousel-image active" />
+                <img src="assets/subbotnik-light.jpeg" alt="СУББОТНИК" class="carousel-image" />
+                <img src="assets/subbotnik-sports.jpeg" alt="СУББОТНИК" class="carousel-image" />
+                <img src="assets/subbotnik-tech.jpeg" alt="СУББОТНИК" class="carousel-image" />
+                <img src="assets/subbotnik-april.jpeg" alt="СУББОТНИК" class="carousel-image" />
+                <img src="assets/subbotnik-belka.jpeg" alt="СУББОТНИК" class="carousel-image" />
+                <img src="assets/subbotnik-dubrovka.jpeg" alt="СУББОТНИК" class="carousel-image" />
+              </div>
+              <div class="carousel-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+                <span class="dot" data-slide="3"></span>
+                <span class="dot" data-slide="4"></span>
+                <span class="dot" data-slide="5"></span>
+                <span class="dot" data-slide="6"></span>
+              </div>
+            </div>
             <div class="brand-bubbles" aria-hidden="true">
               <span class="bubble bubble--xl"></span>
               <span class="bubble bubble--lg"></span>
@@ -168,7 +187,7 @@
           <div class="priority-grid">
             <div class="priority-card">
               <h3>Кому доступна приоритетная запись?</h3>
-              <ul>
+              <ul class="priority-list">
                 <li class="slot slot--tight">
                   <span class="slot-title">Новички игрового дня</span>
                   <span class="slot-time">разовое участие</span>
@@ -263,7 +282,7 @@
           <div class="loyalty-content">
             <article class="card loyalty-card">
               <h3>Посещай игровые дни</h3>
-              <ul>
+              <ul class="loyalty-list">
                 <li class="slot slot--tight">
                   <span class="slot-title">12 посещений за сезон</span>
                   <span class="slot-time">сертификат на игровой день</span>
@@ -287,7 +306,7 @@
             </article>
             <article class="card loyalty-card">
               <h3>Приводи друзей</h3>
-              <ul>
+              <ul class="loyalty-list">
                 <li class="slot slot--tight">
                   <span class="slot-title">Приведи двух друзей</span>
                   <span class="slot-time">получи сертификат на игровой день</span>
@@ -316,7 +335,7 @@
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <div>
+        <div class="footer-brand">
           <strong>СУББОТНИК FAMILY</strong>
           <p>Сквош, поддержка, рост. Мы рядом на всех этапах игры.</p>
         </div>
@@ -324,11 +343,55 @@
           <a href="#play-days">Расписание</a>
           <a href="#community">Комьюнити</a>
           <a href="#loyalty">Лояльность</a>
-          <!-- <a href="mailto:hello@subbotnik.family">hello@subbotnik.family</a> -->
+          <!-- <a href="https://t.me/squashsubbotnik" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://www.instagram.com/squashsubbotnik?igsh=MTJ0Ym5jcDdrenRxMg==" target="_blank" rel="noopener">Instagram</a> -->
         </div>
+        <!-- <div class="footer-contact">
+          <span>По вопросам организации:</span>
+          <a href="mailto:hello@subbotnik.family">hello@subbotnik.family</a>
+        </div> -->
       </div>
       <p class="footer-note">© СУББОТНИК, 2025. Сделано с любовью к сквошу.</p>
     </footer>
+
+    <script>
+      // Карусель фотографий
+      document.addEventListener('DOMContentLoaded', function() {
+        const images = document.querySelectorAll('.carousel-image');
+        const dots = document.querySelectorAll('.dot');
+        let currentSlide = 0;
+        const totalSlides = images.length;
+
+        function showSlide(index) {
+          // Убираем активный класс со всех изображений и точек
+          images.forEach(img => img.classList.remove('active'));
+          dots.forEach(dot => dot.classList.remove('active'));
+          
+          // Добавляем активный класс к текущему слайду
+          images[index].classList.add('active');
+          dots[index].classList.add('active');
+        }
+
+        function nextSlide() {
+          currentSlide = (currentSlide + 1) % totalSlides;
+          showSlide(currentSlide);
+        }
+
+        // Автоматическая смена слайдов каждые 5 секунд
+        setInterval(nextSlide, 5000);
+
+        // Обработчики кликов по точкам
+        dots.forEach((dot, index) => {
+          dot.addEventListener('click', () => {
+            currentSlide = index;
+            showSlide(currentSlide);
+          });
+        });
+
+        // Показываем первый слайд при загрузке
+        showSlide(0);
+      });
+    </script>
   </body>
 </html>
 
