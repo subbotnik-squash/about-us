@@ -1,397 +1,340 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>СУББОТНИК — Сквош сообщество</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" type="image/jpeg" href="assets/subbotnik-light.jpeg" />
-    <link rel="shortcut icon" type="image/jpeg" href="assets/subbotnik-light.jpeg" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container header-inner">
-        <div class="logo-wrapper">
-          <a class="logo" href="#about" aria-label="СУББОТНИК на главную">
-            <img src="assets/subbotnik-light.jpeg" alt="Логотип СУББОТНИК" />
-          </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="СКВОШ СУББОТНИК — платформа для игры в сквош в Москве. Запись на игровые дни, рейтинг и соперники своего уровня." />
+  <title>СКВОШ СУББОТНИК</title>
+  <link rel="icon" type="image/jpeg" href="assets/subbotnik-light.jpeg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#top">СКВОШ<br>СУББОТНИК</a>
+      <nav class="main-nav" aria-label="Основная навигация">
+        <a href="#how">Как работает</a>
+        <a href="#for-whom">Для кого</a>
+        <a href="#where">Клубы</a>
+        <a href="#organizers">Организаторам</a>
+      </nav>
+      <button class="btn-soon" disabled>Скоро</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="top">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <p class="eyebrow">платформа для сквоша</p>
+          <h1>ПРОГРЕСС<br>НАЧИНАЕТСЯ<br>В ИГРЕ</h1>
+          <p class="hero-lead">получай удовольствие от сквоша по-настоящему</p>
+          <div class="hero-cta">
+            <a href="https://t.me/squashsubbotnik" class="btn-cta" target="_blank" rel="noopener">
+              Узнай свой рейтинг
+            </a>
+            <div class="store-badges">
+              <button class="btn-badge" disabled aria-label="App Store — скоро">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                App Store
+              </button>
+              <button class="btn-badge" disabled aria-label="Google Play — скоро">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.18 23.76c.3.17.65.19.98.08l12.15-7.01-2.69-2.69-10.44 9.62zm-1.1-20.1a1.5 1.5 0 0 0-.08.47v15.74c0 .17.03.33.08.47l.07.07 8.82-8.82v-.2L2.15 3.59l-.07.07zm19.16 8.43-2.54-1.47-2.97 2.97 2.97 2.97 2.57-1.48c.73-.42.73-1.57-.03-1.99zM4.16.24 16.31 7.25l-2.69 2.69L3.18.32c.33-.11.68-.09.98.08z"/></svg>
+                Google Play
+              </button>
+              <button class="btn-badge" disabled aria-label="RuStore — скоро">
+                <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true">
+                  <rect x="0.75" y="0.75" width="18.5" height="18.5" rx="4.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                  <path fill="currentColor" d="M6 5.5h5.2c1.8 0 3.1 1.2 3.1 2.9 0 1.1-.6 2.1-1.6 2.6L15 15.5h-2.4l-2.1-4H8v4H6V5.5zm2 2v2.6h3.1c.8 0 1.4-.55 1.4-1.3s-.6-1.3-1.4-1.3H8z"/>
+                </svg>
+                RuStore
+              </button>
+            </div>
+          </div>
         </div>
-        <nav class="main-nav">
-          <a href="#about">О нас</a>
-          <a href="#play-days">Игровые дни</a>
-          <a href="#priority">Приоритетная запись</a>
-          <a href="#community">Комьюнити</a>
-          <a href="#loyalty">Лояльность</a>
-        </nav>
-        <a class="cta" href="#join">Присоединиться</a>
+        <div class="hero-visual">
+          <div class="iphone-stage">
+            <img src="assets/app-screenshot-portrait.png" alt="Приложение СКВОШ СУББОТНИК" class="iphone-mockup" />
+          </div>
+        </div>
       </div>
-    </header>
+    </section>
 
-    <main>
-      <section class="hero" id="about">
-        <div class="container hero-inner">
-          <div class="hero-content">
-            <p class="eyebrow">Сквош для всех</p>
-            <h1>СУББОТНИК — самое тёплое сообщество для игры в сквош</h1>
-            <p class="hero-text">
-              Мы выращиваем новичков в победителей, создаём безопасную среду для роста и празднуем каждый успех.
-            </p>
-            <!-- <div class="hero-actions">
-              <a class="primary" href="#play-days">К расписанию</a>
-              <a class="secondary" href="#community">В комьюнити</a>
-            </div> -->
-          </div>
-          <div class="hero-visual">
-            <div class="photo-carousel">
-              <div class="carousel-container">
-                <img src="assets/photo.jpg" alt="СУББОТНИК" class="carousel-image active" />
-                <img src="assets/subbotnik-light.jpeg" alt="СУББОТНИК" class="carousel-image" />
-                <img src="assets/subbotnik-sports.jpeg" alt="СУББОТНИК" class="carousel-image" />
-                <img src="assets/subbotnik-tech.jpeg" alt="СУББОТНИК" class="carousel-image" />
-                <img src="assets/subbotnik-april.jpeg" alt="СУББОТНИК" class="carousel-image" />
-                <img src="assets/subbotnik-belka.jpeg" alt="СУББОТНИК" class="carousel-image" />
-                <img src="assets/subbotnik-dubrovka.jpeg" alt="СУББОТНИК" class="carousel-image" />
-              </div>
-              <div class="carousel-dots">
-                <span class="dot active" data-slide="0"></span>
-                <span class="dot" data-slide="1"></span>
-                <span class="dot" data-slide="2"></span>
-                <span class="dot" data-slide="3"></span>
-                <span class="dot" data-slide="4"></span>
-                <span class="dot" data-slide="5"></span>
-                <span class="dot" data-slide="6"></span>
-              </div>
-            </div>
-            <div class="brand-bubbles" aria-hidden="true">
-              <span class="bubble bubble--xl"></span>
-              <span class="bubble bubble--lg"></span>
-              <span class="bubble bubble--md"></span>
-              <span class="bubble bubble--sm"></span>
-            </div>
-          </div>
+    <!-- ===== STATS ===== -->
+    <section class="stats">
+      <div class="container stats-inner">
+        <div class="stat">
+          <span class="stat-num" data-target="500" data-suffix="+">500+</span>
+          <span class="stat-label">игровых ивентов</span>
         </div>
-      </section>
-
-      <section class="cards" id="play-days">
-        <div class="container">
-          <div class="section-head">
-            <h2>Игровые дни</h2>
-            <p>Выбирай площадку, добавляйся в чат и приходи играть.</p>
-          </div>
-          <div class="grid">
-            <article class="card location location--dubrovka">
-              <header class="location-heading">
-                <img
-                  class="location-logo"
-                  src="assets/subbotnik-dubrovka.jpeg"
-                  alt="СКМ Дубровка"
-                />
-                <h3>СКМ Дубровка</h3>
-              </header>
-              <ul>
-                <li class="slot">
-                  <span class="slot-title">Ночная лига</span>
-                  <span class="slot-time">четверг · 22:00–00:00</span>
-                </li>
-                <li class="slot">
-                  <span class="slot-title">Субботник</span>
-                  <span class="slot-time">суббота · 8:00–10:00</span>
-                </li>
-                <li class="slot">
-                  <span class="slot-title">Субботник 2.0</span>
-                  <span class="slot-time">суббота · 20:00–22:00</span>
-                </li>
-                <li class="slot">
-                  <span class="slot-title">Воскресник</span>
-                  <span class="slot-time">воскресенье · 18:00–20:00</span>
-                </li>
-              </ul>
-              <a
-                class="card-link"
-                href="https://t.me/+gu79G02NCtUwNmQy"
-                target="_blank"
-                rel="noopener"
-              >
-                Чат СУББОТНИК Дубровка
-              </a>
-            </article>
-            <article class="card location location--belka">
-              <header class="location-heading">
-                <img
-                  class="location-logo"
-                  src="assets/subbotnik-belka.jpeg"
-                  alt="Belka"
-                />
-                <h3>Belka</h3>
-              </header>
-              <ul>
-                <li class="slot">
-                  <span class="slot-title">Вечерняя лига</span>
-                  <span class="slot-time">вторник · 20:00–22:00</span>
-                </li>
-                <li class="slot">
-                  <span class="slot-title">Воскресник</span>
-                  <span class="slot-time">воскресенье · 15:00–17:00</span>
-                </li>
-              </ul>
-              <a
-                class="card-link"
-                href="https://t.me/+8Dg1gg1AcBcxMTYy"
-                target="_blank"
-                rel="noopener"
-              >
-                Чат СУББОТНИК Belka
-              </a>
-            </article>
-            <article class="card location location--aprelevka">
-              <header class="location-heading">
-                <img
-                  class="location-logo"
-                  src="assets/subbotnik-april.jpeg"
-                  alt="Апрелевка"
-                />
-                <h3>Апрелевка</h3>
-              </header>
-              <ul>
-                <li class="slot">
-                  <span class="slot-title">Вечерняя лига</span>
-                  <span class="slot-time">понедельник · 20:00–22:00</span>
-                </li>
-                <li class="slot">
-                  <span class="slot-title">Вечерняя лига</span>
-                  <span class="slot-time">четверг · 20:00–22:00</span>
-                </li>
-              </ul>
-              <a
-                class="card-link"
-                href="https://t.me/+to1LFxKloz02ZGIy"
-                target="_blank"
-                rel="noopener"
-              >
-                Чат СУББОТНИК Апрелевка
-              </a>
-            </article>
-          </div>
+        <div class="stat">
+          <span class="stat-num" data-target="1300" data-suffix="+">1300+</span>
+          <span class="stat-label">игроков по России</span>
         </div>
-      </section>
-
-      <section class="priority" id="priority">
-        <div class="container">
-          <div class="section-head">
-            <h2>Приоритетная запись</h2>
-            <p>Помогаем резидентам попадать на игровые дни даже в пиковые периоды. Мы всегда оставляем минимум половину мест для свободной записи.
-                Даже на самые популярные игровые дни мы делаем всё, чтобы каждый резидент нашёл своё окно.</p>
-          </div>
-          <div class="priority-grid">
-            <div class="priority-card">
-              <h3>Кому доступна приоритетная запись?</h3>
-              <ul class="priority-list">
-                <li class="slot slot--tight">
-                  <span class="slot-title">Новички игрового дня</span>
-                  <span class="slot-time">разовое участие</span>
-                </li>
-                <li class="slot slot--tight">
-                  <span class="slot-title">Ясли</span>
-                  <span class="slot-time">самые низкорейтинговые · 8 мест</span>
-                </li>
-                <li class="slot slot--tight">
-                  <span class="slot-title">Топы</span>
-                  <span class="slot-time">самые высокорейтинговые · 8 мест</span>
-                </li>
-                <li class="slot slot--tight">
-                  <span class="slot-title">Команда СУББОТНИКа</span>
-                  <span class="slot-time">админы и технари</span>
-                </li>
-                <li class="slot slot--tight">
-                  <span class="slot-title">Спонсоры и партнёры</span>
-                  <span class="slot-time">используют привилегию редко</span>
-                </li>
-                <li class="slot slot--tight">
-                  <span class="slot-title">Приглашённые звёзды</span>
-                  <span class="slot-time">ограниченное количество мест</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+        <div class="stat">
+          <span class="stat-num" data-target="5">5</span>
+          <span class="stat-label">клубов-партнёров</span>
         </div>
-      </section>
-
-      <section class="community" id="community">
-        <div class="container">
-          <div class="section-head">
-            <h2>Комьюнити и медиа</h2>
-            <p>Подключайся к каналам, чтобы быть в курсе событий и находить единомышленников.</p>
-          </div>
-          <div class="grid grid--two">
-            <article class="card">
-              <h3>Телеграм</h3>
-              <ul class="community-list">
-                <li class="slot slot--tight">
-                  <span class="slot-title">Канал СУББОТНИК FAMILY</span>
-                  <span class="slot-time">
-                    <a href="https://t.me/squashsubbotnik" target="_blank" rel="noopener">актуальные новости, анонсы и видео</a>
-                  </span>
-                </li>
-                <li class="slot slot--tight">
-                  <span class="slot-title">Чаты СПОРТС и ЯСЛИ СПОРТС</span>
-                  <span class="slot-time">групповые тренировки · доступ по запросу у @borisgolovanev</span>
-                </li>
-                <li class="slot slot--tight">
-                  <span class="slot-title">Канал Бориса</span>
-                  <span class="slot-time">личный блог тренера · ссылка внутри чатов</span>
-                </li>
-              </ul>
-            </article>
-            <article class="card">
-              <h3>Новинки и медиа</h3>
-              <ul class="community-list">
-                <li class="slot slot--tight">
-                  <span class="slot-title">«Дисижн, плиз»</span>
-                  <span class="slot-time">
-                    <a href="https://t.me/decisionplz" target="_blank" rel="noopener">обсуждение спорных моментов матчей</a>
-                  </span>
-                </li>
-                <li class="slot slot--tight">
-                  <span class="slot-title">Трансляции матчей</span>
-                  <span class="slot-time">
-                    <a href="https://vkvideo.ru/@club231781932" target="_blank" rel="noopener">смотри игры в прямом эфире</a>
-                  </span>
-                </li>
-                <li class="slot slot--tight">
-                  <span class="slot-title">Запретограм</span>
-                  <span class="slot-time">
-                    <a href="https://www.instagram.com/squashsubbotnik?igsh=MTJ0Ym5jcDdrenRxMg==" target="_blank" rel="noopener">лайфстайл, фотографии, рилсы</a>
-                  </span>
-                </li>
-              </ul>
-            </article>
-          </div>
+        <div class="stat">
+          <span class="stat-num" data-target="2023" data-noanimate>2023</span>
+          <span class="stat-label">год основания</span>
         </div>
-      </section>
-
-      <section class="loyalty" id="loyalty">
-        <div class="container loyalty-inner">
-          <div>
-            <h2>Программа лояльности</h2>
-            <p>
-              Расти вместе с нами: играй регулярно, приводи друзей и получай дополнительные игровые дни.
-            </p>
-          </div>
-          <div class="loyalty-content">
-            <article class="card loyalty-card">
-              <h3>Посещай игровые дни</h3>
-              <ul class="loyalty-list">
-                <li class="slot slot--tight">
-                  <span class="slot-title">12 посещений за сезон</span>
-                  <span class="slot-time">сертификат на игровой день</span>
-                </li>
-                <li class="slot slot--tight">
-                  <span class="slot-title">22 посещения</span>
-                  <span class="slot-time">два сертификата</span>
-                </li>
-                <li class="slot slot--tight">
-                  <span class="slot-title">30 посещений</span>
-                  <span class="slot-time">три сертификата</span>
-                </li>
-                <li class="slot slot--tight">
-                  <span class="slot-title">Бонус за Лето 2025</span>
-                  <span class="slot-time">сертификат всем, кто сыграл 12+ раз</span>
-                </li>
-              </ul>
-              <p class="note">
-                Сезон длится 3 месяца. Осень 2025 стартует 1 сентября.
-              </p>
-            </article>
-            <article class="card loyalty-card">
-              <h3>Приводи друзей</h3>
-              <ul class="loyalty-list">
-                <li class="slot slot--tight">
-                  <span class="slot-title">Приведи двух друзей</span>
-                  <span class="slot-time">получи сертификат на игровой день</span>
-                </li>
-                <li class="slot slot--tight">
-                  <span class="slot-title">Поддержка новичка</span>
-                  <span class="slot-time">помоги освоить основы или стань наставником</span>
-                </li>
-              </ul>
-              <p class="note">По вопросам обращайся к @borisgolovanev.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="join" id="join">
-        <div class="container join-inner">
-          <h2>Присоединяйся к СУББОТНИКУ</h2>
-          <p>
-            Переходи к нам в канал, чтобы зарезервировать место на игровом дне и вступить в самое тёплое сквош-комьюнити.
-          </p>
-          <a class="primary" href="https://t.me/squashsubbotnik" target="_blank" rel="noopener">Присоединиться</a>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <div class="footer-brand">
-          <strong>СУББОТНИК FAMILY</strong>
-          <p>Сквош, поддержка, рост. Мы рядом на всех этапах игры.</p>
-        </div>
-        <div class="footer-links">
-          <a href="#play-days">Расписание</a>
-          <a href="#community">Комьюнити</a>
-          <a href="#loyalty">Лояльность</a>
-          <!-- <a href="https://t.me/squashsubbotnik" target="_blank" rel="noopener">Telegram</a>
-          <a href="https://www.instagram.com/squashsubbotnik?igsh=MTJ0Ym5jcDdrenRxMg==" target="_blank" rel="noopener">Instagram</a> -->
-        </div>
-        <!-- <div class="footer-contact">
-          <span>По вопросам организации:</span>
-          <a href="mailto:hello@subbotnik.family">hello@subbotnik.family</a>
-        </div> -->
       </div>
-      <p class="footer-note">© СУББОТНИК, 2025. Сделано с любовью к сквошу.</p>
-    </footer>
+    </section>
 
-    <!-- <script>
-      // Карусель фотографий
-      document.addEventListener('DOMContentLoaded', function() {
-        const images = document.querySelectorAll('.carousel-image');
-        const dots = document.querySelectorAll('.dot');
-        let currentSlide = 0;
-        const totalSlides = images.length;
+    <!-- ===== PROBLEM / SOLUTION ===== -->
+    <section class="problem">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">почему это важно</p>
+          <h2>БЕЗ СИСТЕМЫ<br>ТЫ ИГРАЕШЬ<br>ВСЛЕПУЮ</h2>
+          <p class="problem-insight">игроки растут быстрее в игре, а не на тренировках — но только когда каждый матч что-то значит</p>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-row">
+            <div class="problem-cell problem-cell--before">запись в чате — «плюс, плюс, плюс»</div>
+            <div class="problem-arrow">→</div>
+            <div class="problem-cell problem-cell--after">запись в один клик — кто придёт, видно сразу</div>
+          </div>
+          <div class="problem-row">
+            <div class="problem-cell problem-cell--before">играешь с кем придётся — прогресс случайный</div>
+            <div class="problem-arrow">→</div>
+            <div class="problem-cell problem-cell--after">соперники твоего уровня — каждый матч имеет смысл</div>
+          </div>
+          <div class="problem-row">
+            <div class="problem-cell problem-cell--before">результаты нигде не сохраняются</div>
+            <div class="problem-arrow">→</div>
+            <div class="problem-cell problem-cell--after">вся история матчей и динамика роста под рукой</div>
+          </div>
+          <div class="problem-row">
+            <div class="problem-cell problem-cell--before">не знаешь свой уровень — выше ты или ниже?</div>
+            <div class="problem-arrow">→</div>
+            <div class="problem-cell problem-cell--after">объективный рейтинг обновляется после каждой игры</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        function showSlide(index) {
-          // Убираем активный класс со всех изображений и точек
-          images.forEach(img => img.classList.remove('active'));
-          dots.forEach(dot => dot.classList.remove('active'));
-          
-          // Добавляем активный класс к текущему слайду
-          images[index].classList.add('active');
-          dots[index].classList.add('active');
-        }
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="how" id="how">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">возможности платформы</p>
+          <h2>КАК ЭТО<br>РАБОТАЕТ</h2>
+        </div>
+        <div class="features">
+          <article class="feature">
+            <div class="feature-num">01</div>
+            <h3>ЗАПИСЬ НА ИВЕНТЫ</h3>
+            <p>профессиональные игровые дни в Москве — выбери клуб и время, забронируй место прямо в приложении</p>
+          </article>
+          <article class="feature">
+            <div class="feature-num">02</div>
+            <h3>СОПЕРНИКИ ТВОЕГО УРОВНЯ</h3>
+            <p>система рейтинга подбирает игроков чуть сильнее и чуть слабее тебя — каждый матч конкурентный и полезный для роста</p>
+          </article>
+          <article class="feature">
+            <div class="feature-num">03</div>
+            <h3>РЕЙТИНГ И ПРОГРЕСС</h3>
+            <p>рейтинг учитывает силу соперника — победа над сильным игроком даёт больше. ты видишь своё место среди всех и куда растёшь</p>
+          </article>
+          <article class="feature">
+            <div class="feature-num">04</div>
+            <h3>ИСТОРИЯ МАТЧЕЙ</h3>
+            <p>все твои игры сохраняются — с кем играл, с каким счётом и как менялся рейтинг после каждого матча</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        function nextSlide() {
-          currentSlide = (currentSlide + 1) % totalSlides;
-          showSlide(currentSlide);
-        }
+    <!-- ===== FOR WHOM ===== -->
+    <section class="for-whom" id="for-whom">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">для кого</p>
+          <h2>ОДИН РЕЙТИНГ —<br>ДЛЯ ВСЕХ</h2>
+          <p class="section-lead">мы не делим игроков по полу или статусу — только по уровню игры</p>
+        </div>
+        <div class="levels">
+          <div class="level">
+            <span class="level-name">начинающие</span>
+            <p>первые шаги в сквоше — безопасная среда для роста и знакомства с игрой</p>
+          </div>
+          <div class="level">
+            <span class="level-name">любители</span>
+            <p>хочешь играть чаще, находить новых соперников и видеть свой прогресс</p>
+          </div>
+          <div class="level">
+            <span class="level-name">продвинутые</span>
+            <p>ищешь достойных соперников и серьёзную конкуренцию</p>
+          </div>
+          <div class="level">
+            <span class="level-name">топ России</span>
+            <p>сильнейшие игроки страны, первые ракетки регионов и чемпионы турниров</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        // Автоматическая смена слайдов каждые 5 секунд
-        setInterval(nextSlide, 5000);
+    <!-- ===== WHERE ===== -->
+    <section class="where" id="where">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">где мы есть</p>
+          <h2>МОСКВА И КАЗАНЬ</h2>
+          <p class="section-lead">регулярные игровые дни — список клубов постоянно пополняется</p>
+        </div>
+        <div class="clubs-carousel">
+          <div class="clubs-track" id="clubsTrack">
 
-        // Обработчики кликов по точкам
-        dots.forEach((dot, index) => {
-          dot.addEventListener('click', () => {
-            currentSlide = index;
-            showSlide(currentSlide);
-          });
-        });
+            <div class="club-card">
+              <div class="club-img-wrap">
+                <img src="assets/subbotnik-Dubrovka.jpg" alt="СК Москва" class="club-img" loading="lazy" />
+              </div>
+              <div class="club-info">
+                <span class="location-badge">Москва</span>
+                <span class="location-name">СК Москва</span>
+              </div>
+            </div>
 
-        // Показываем первый слайд при загрузке
-        showSlide(0);
-      });
-    </script> -->
-  </body>
+            <div class="club-card">
+              <div class="club-img-wrap">
+                <img src="assets/subbotnik-Belka.jpg" alt="СК Belka" class="club-img" loading="lazy" />
+              </div>
+              <div class="club-info">
+                <span class="location-badge">Москва</span>
+                <span class="location-name">СК Belka</span>
+              </div>
+            </div>
+
+            <div class="club-card">
+              <div class="club-img-wrap">
+                <img src="assets/subbotnik-drive.jpg" alt="СК Drive" class="club-img" loading="lazy" />
+              </div>
+              <div class="club-info">
+                <span class="location-badge">Москва</span>
+                <span class="location-name">СК Drive</span>
+              </div>
+            </div>
+
+            <div class="club-card">
+              <div class="club-img-wrap">
+                <img src="assets/subbotnik-pearl.jpg" alt="СЦ Жемчужина" class="club-img" loading="lazy" />
+              </div>
+              <div class="club-info">
+                <span class="location-badge">Москва</span>
+                <span class="location-name">СЦ Жемчужина</span>
+              </div>
+            </div>
+
+            <div class="club-card">
+              <div class="club-img-wrap">
+                <img src="assets/subbotnik-12-10.jpg" alt="СК «12:10»" class="club-img" loading="lazy" />
+              </div>
+              <div class="club-info">
+                <span class="location-badge">Москва</span>
+                <span class="location-name">СК «12:10»</span>
+              </div>
+            </div>
+
+            <div class="club-card">
+              <div class="club-img-wrap">
+                <img src="assets/subbotnik-Kazan.jpg" alt="СК Артен" class="club-img" loading="lazy" />
+              </div>
+              <div class="club-info">
+                <span class="location-badge location-badge--city">Казань</span>
+                <span class="location-name">СК Артен</span>
+              </div>
+            </div>
+
+          </div>
+          <div class="clubs-nav">
+            <button class="clubs-btn clubs-btn--prev" id="clubsPrev" aria-label="Назад">←</button>
+            <button class="clubs-btn clubs-btn--next" id="clubsNext" aria-label="Вперёд">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ORGANIZERS ===== -->
+    <section class="organizers" id="organizers">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">организаторам и тренерам</p>
+          <h2>ЗАПУСТИ СВОЙ<br>ИГРОВОЙ ДЕНЬ</h2>
+        </div>
+        <div class="org-grid">
+          <div class="org-col">
+            <p class="org-title">если ты:</p>
+            <ul>
+              <li>уже проводишь игровые дни</li>
+              <li>хочешь улучшить формат</li>
+              <li>ищешь новых игроков</li>
+              <li>хочешь удерживать аудиторию</li>
+            </ul>
+          </div>
+          <div class="org-col org-col--offer">
+            <p class="org-title">мы даём:</p>
+            <ul>
+              <li>проверенные регламенты ивентов</li>
+              <li>удобный инструмент управления играми</li>
+              <li>поток новых участников</li>
+              <li>систему, которая удерживает игроков</li>
+            </ul>
+          </div>
+        </div>
+        <a href="https://t.me/squashsubbotnik" class="btn-primary" target="_blank" rel="noopener">Написать в Telegram</a>
+      </div>
+    </section>
+
+    <!-- ===== JOIN ===== -->
+    <section class="join">
+      <div class="container join-inner">
+        <p class="eyebrow">присоединяйся</p>
+        <h2>1300+ ИГРОКОВ<br>УЖЕ ВНУТРИ</h2>
+        <p class="join-lead">каждая игра без рейтинга — это шаг назад.<br>приложение выходит скоро — вступай в комьюнити уже сейчас.</p>
+        <div class="join-actions">
+          <a href="https://t.me/squashsubbotnik" class="btn-join" target="_blank" rel="noopener">Узнай свой рейтинг</a>
+          <div class="store-badges store-badges--light">
+            <button class="btn-badge btn-badge--light" disabled aria-label="App Store — скоро">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              App Store
+            </button>
+            <button class="btn-badge btn-badge--light" disabled aria-label="Google Play — скоро">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.18 23.76c.3.17.65.19.98.08l12.15-7.01-2.69-2.69-10.44 9.62zm-1.1-20.1a1.5 1.5 0 0 0-.08.47v15.74c0 .17.03.33.08.47l.07.07 8.82-8.82v-.2L2.15 3.59l-.07.07zm19.16 8.43-2.54-1.47-2.97 2.97 2.97 2.97 2.57-1.48c.73-.42.73-1.57-.03-1.99zM4.16.24 16.31 7.25l-2.69 2.69L3.18.32c.33-.11.68-.09.98.08z"/></svg>
+              Google Play
+            </button>
+            <button class="btn-badge btn-badge--light" disabled aria-label="RuStore — скоро">
+              <span class="badge-mono" aria-hidden="true">Р</span>
+              RuStore
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="footer-logo">СКВОШ СУББОТНИК</p>
+        <p class="footer-tagline">сквош, поддержка, рост</p>
+      </div>
+      <nav class="footer-nav" aria-label="Навигация в футере">
+        <a href="#how">Как работает</a>
+        <a href="#for-whom">Для кого</a>
+        <a href="#where">Клубы</a>
+        <a href="#organizers">Организаторам</a>
+        <a href="https://t.me/squashsubbotnik" target="_blank" rel="noopener">Telegram</a>
+      </nav>
+    </div>
+    <p class="footer-copy">© СКВОШ СУББОТНИК, 2025</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
-
