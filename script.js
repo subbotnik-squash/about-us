@@ -1,23 +1,79 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   // ── Platform-aware CTA ────────────────────────────────
-  // Fill in links when app launches; fallback stays Telegram
-  const APP_LINKS = {
-    ios:      '',   // 'https://apps.apple.com/...'
-    android:  '',   // 'https://play.google.com/store/...'
-    fallback: 'https://t.me/squashsubbotnik'
-  };
-
+  // All links are managed in config.js (LINKS object)
   function resolveCtaHref() {
-    const ua = navigator.userAgent;
-    if (/iphone|ipad|ipod/i.test(ua) && APP_LINKS.ios) return APP_LINKS.ios;
-    if (/android/i.test(ua) && APP_LINKS.android) return APP_LINKS.android;
-    return APP_LINKS.fallback;
+    var ua = navigator.userAgent;
+    if (/iphone|ipad|ipod/i.test(ua) && LINKS.app.ios)     return LINKS.app.ios;
+    if (/android/i.test(ua)           && LINKS.app.android) return LINKS.app.android;
+    return LINKS.telegram;
   }
 
   document.querySelectorAll('.btn-cta').forEach(function (btn) {
     btn.href = resolveCtaHref();
   });
+
+  // ── Club card links (must run BEFORE carousel clones the cards) ────
+  document.querySelectorAll('.club-card[data-club]').forEach(function (card) {
+    var url = LINKS.clubs[card.dataset.club];
+    if (url) card.href = url;
+  });
+
+
+
+  // ── Download modal ─────────────────────────────────
+  var modalOverlay = document.getElementById('downloadModal');
+  var modalClose   = document.getElementById('modalClose');
+
+  if (modalOverlay) {
+
+    // Update store buttons from config.js → LINKS.app
+    var storeMap = [
+      { id: 'storeIos',     url: LINKS.app.ios },
+      { id: 'storeAndroid', url: LINKS.app.android },
+      { id: 'storeRustore', url: LINKS.app.rustore }
+    ];
+
+    storeMap.forEach(function (s) {
+      var el = document.getElementById(s.id);
+      if (!el) return;
+      if (s.url) {
+        el.href = s.url;
+        el.querySelector('.modal-store-status').textContent = 'Доступно';
+      } else {
+        el.classList.add('store-soon');
+      }
+    });
+
+    function openModal() {
+      modalOverlay.classList.add('modal--open');
+      document.body.style.overflow = 'hidden';
+      modalClose.focus();
+    }
+
+    function closeModal() {
+      modalOverlay.classList.remove('modal--open');
+      document.body.style.overflow = '';
+    }
+
+    // Open on CTA clicks (prevent href navigation)
+    document.querySelectorAll('.btn-cta, .btn-join, .btn-header-cta').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        openModal();
+      });
+    });
+
+    modalClose.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', function (e) {
+      if (e.target === modalOverlay) closeModal();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modalOverlay.classList.contains('modal--open')) {
+        closeModal();
+      }
+    });
+  }
 
 
 
@@ -46,7 +102,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function tick() {
       if (animating) {
-        // Ease-out toward target (factor 0.12 ≈ ~0.4 s for one card)
         var diff = target - pos;
         if (Math.abs(diff) < 0.5) {
           pos = target;
@@ -58,20 +113,18 @@ document.addEventListener('DOMContentLoaded', function () {
       } else if (!paused) {
         pos += speed;
         if (pos >= halfWidth()) pos = 0;
-        target = pos;          // keep target in sync during auto-scroll
+        target = pos;
         track.scrollLeft = pos;
       }
       requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
 
-    // Pause on hover so user can read / hover-inspect
     track.addEventListener('mouseenter', function () { paused = true; });
     track.addEventListener('mouseleave', function () {
       if (!animating) paused = false;
     });
 
-    // Arrow buttons — smooth ease to nearest card, then resume auto-scroll
     var prevBtn     = document.getElementById('clubsPrev');
     var nextBtn     = document.getElementById('clubsNext');
     var resumeTimer = null;
@@ -86,7 +139,6 @@ document.addEventListener('DOMContentLoaded', function () {
       clearTimeout(resumeTimer);
       paused = true;
       var half = halfWidth();
-      // Base off current target if already animating (stacks clicks), else off pos
       var base = animating ? target : pos;
       target = Math.max(0, Math.min(half - 1, base + dir * cardStep()));
       animating = true;
@@ -102,10 +154,56 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+  // ── Cap each section lead to its heading width ─────
+  function syncLeadWidths() {
+    document.querySelectorAll('.section-head').forEach(function (head) {
+      var h2   = head.querySelector('h2');
+      var lead = head.querySelector('.section-lead');
+      if (!h2 || !lead) return;
+      lead.style.maxWidth = Math.round(h2.getBoundingClientRect().width) + 'px';
+    });
+  }
+  syncLeadWidths();
+  window.addEventListener('load', syncLeadWidths);
+  var leadResizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(leadResizeTimer);
+    leadResizeTimer = setTimeout(syncLeadWidths, 150);
+  });
+
+
+
+  // ── Scroll reveal ─────────────────────────────────
+  var revealObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  function addReveal(selector, staggerSec) {
+    document.querySelectorAll(selector).forEach(function (el, i) {
+      el.classList.add('reveal');
+      if (staggerSec) el.style.transitionDelay = (i * staggerSec) + 's';
+      revealObserver.observe(el);
+    });
+  }
+
+  addReveal('.section-head');
+  addReveal('.stat',         0.09);
+  addReveal('.problem-row',  0.08);
+  addReveal('.feature',      0.09);
+  addReveal('.level',        0.09);
+  addReveal('.org-col',      0.1);
+  addReveal('.btn-primary');
+
+
+
   // ── Animated counters ──────────────────────────────
   function animateCounter(el) {
     const target = parseInt(el.dataset.target, 10);
-    const suffix = el.dataset.suffix || '';
     const duration = 1400;
     const start = performance.now();
 
@@ -113,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const progress = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
       const current = Math.round(eased * target);
-      el.textContent = current.toLocaleString('ru') + suffix;
+      el.textContent = current.toLocaleString('ru');
       if (progress < 1) requestAnimationFrame(tick);
     }
 
@@ -125,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.querySelectorAll('.stat-num[data-target]').forEach(el => {
+          entry.target.querySelectorAll('.stat-val[data-target]').forEach(el => {
             if (!el.hasAttribute('data-noanimate')) animateCounter(el);
           });
           observer.unobserve(entry.target);

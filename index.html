@@ -3,27 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="СКВОШ СУББОТНИК — платформа для игры в сквош в Москве. Запись на игровые дни, рейтинг и соперники своего уровня." />
+  <meta name="description" content="СКВОШ СУББОТНИК — платформа для игры в сквош. Запись на игровые дни, рейтинг и соперники своего уровня." />
   <title>СКВОШ СУББОТНИК</title>
   <link rel="icon" type="image/jpeg" href="assets/subbotnik-light.jpeg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body data-page="home">
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="#top">СКВОШ<br>СУББОТНИК</a>
-      <nav class="main-nav" aria-label="Основная навигация">
-        <a href="#top">Платформа</a>
-        <a href="#why">Рейтинг</a>
-        <a href="#how">Как работает</a>
-        <a href="#for-whom">Для кого</a>
-        <a href="#where">Клубы</a>
-        <a href="#organizers">Организаторам</a>
-      </nav>
-      <button class="btn-soon" disabled>Скоро</button>
-    </div>
-  </header>
+  <div id="header-mount"></div>
 
   <main>
 
@@ -37,23 +24,6 @@
             <a href="https://t.me/squashsubbotnik" class="btn-cta" target="_blank" rel="noopener">
               Узнай свой рейтинг
             </a>
-            <div class="store-badges">
-              <button class="btn-badge" disabled aria-label="App Store — скоро">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                App Store
-              </button>
-              <button class="btn-badge" disabled aria-label="Google Play — скоро">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.18 23.76c.3.17.65.19.98.08l12.15-7.01-2.69-2.69-10.44 9.62zm-1.1-20.1a1.5 1.5 0 0 0-.08.47v15.74c0 .17.03.33.08.47l.07.07 8.82-8.82v-.2L2.15 3.59l-.07.07zm19.16 8.43-2.54-1.47-2.97 2.97 2.97 2.97 2.57-1.48c.73-.42.73-1.57-.03-1.99zM4.16.24 16.31 7.25l-2.69 2.69L3.18.32c.33-.11.68-.09.98.08z"/></svg>
-                Google Play
-              </button>
-              <button class="btn-badge" disabled aria-label="RuStore — скоро">
-                <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true">
-                  <rect x="0.75" y="0.75" width="18.5" height="18.5" rx="4.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                  <path fill="currentColor" d="M6 5.5h5.2c1.8 0 3.1 1.2 3.1 2.9 0 1.1-.6 2.1-1.6 2.6L15 15.5h-2.4l-2.1-4H8v4H6V5.5zm2 2v2.6h3.1c.8 0 1.4-.55 1.4-1.3s-.6-1.3-1.4-1.3H8z"/>
-                </svg>
-                RuStore
-              </button>
-            </div>
           </div>
         </div>
         <div class="hero-visual">
@@ -68,19 +38,19 @@
     <section class="stats">
       <div class="container stats-inner">
         <div class="stat">
-          <span class="stat-num" data-target="500" data-suffix="+">500+</span>
+          <span class="stat-num"><span class="stat-val" data-target="500">500</span><span class="stat-plus">+</span></span>
           <span class="stat-label">игровых ивентов</span>
         </div>
         <div class="stat">
-          <span class="stat-num" data-target="1300" data-suffix="+">1300+</span>
+          <span class="stat-num"><span class="stat-val" data-target="1300">1300</span><span class="stat-plus">+</span></span>
           <span class="stat-label">игроков по России</span>
         </div>
         <div class="stat">
-          <span class="stat-num" data-target="5">5</span>
+          <span class="stat-num"><span class="stat-val" data-target="5">5</span></span>
           <span class="stat-label">клубов-партнёров</span>
         </div>
         <div class="stat">
-          <span class="stat-num" data-target="2023" data-noanimate>2023</span>
+          <span class="stat-num"><span class="stat-val" data-target="2023" data-noanimate>2023</span></span>
           <span class="stat-label">год основания</span>
         </div>
       </div>
@@ -92,7 +62,6 @@
         <div class="section-head">
           <p class="eyebrow">почему это важно</p>
           <h2>БЕЗ СИСТЕМЫ<br>ТЫ ИГРАЕШЬ<br>ВСЛЕПУЮ</h2>
-          <p class="problem-insight">настоящий прогресс — в матчах, которые что-то значат, а не в случайных партиях</p>
         </div>
         <div class="problem-grid">
           <div class="problem-row">
@@ -112,6 +81,7 @@
           </div>
         </div>
       </div>
+      <img src="assets/dices.png" class="section-illo illo-dices" alt="" aria-hidden="true" />
     </section>
 
     <!-- ===== HOW IT WORKS ===== -->
@@ -169,10 +139,11 @@
           </div>
           <div class="level">
             <span class="level-name">топ России и СНГ</span>
-            <p>сильнейшие игроки России и ближнего зарубежья — первые ракетки регионов и чемпионы турниров</p>
+            <p>сильнейшие игроки России и ближнего зарубежья — первые ракетки регионов и победители турниров</p>
           </div>
         </div>
       </div>
+      <img src="assets/racket-with-ball.png" class="section-illo illo-racket-ball" alt="" aria-hidden="true" />
     </section>
 
     <!-- ===== WHERE ===== -->
@@ -186,7 +157,7 @@
         <div class="clubs-carousel">
           <div class="clubs-track" id="clubsTrack">
 
-            <div class="club-card">
+            <a class="club-card" data-club="moskva" target="_blank" rel="noopener">
               <div class="club-img-wrap">
                 <img src="assets/subbotnik-Dubrovka.jpg" alt="СК Москва" class="club-img" loading="lazy" />
               </div>
@@ -194,9 +165,9 @@
                 <span class="location-badge">Москва</span>
                 <span class="location-name">СК Москва</span>
               </div>
-            </div>
+            </a>
 
-            <div class="club-card">
+            <a class="club-card" data-club="belka" target="_blank" rel="noopener">
               <div class="club-img-wrap">
                 <img src="assets/subbotnik-Belka.jpg" alt="СК Belka" class="club-img" loading="lazy" />
               </div>
@@ -204,9 +175,9 @@
                 <span class="location-badge">Москва</span>
                 <span class="location-name">СК Belka</span>
               </div>
-            </div>
+            </a>
 
-            <div class="club-card">
+            <a class="club-card" data-club="drive" target="_blank" rel="noopener">
               <div class="club-img-wrap">
                 <img src="assets/subbotnik-drive.jpg" alt="СК Drive" class="club-img" loading="lazy" />
               </div>
@@ -214,9 +185,9 @@
                 <span class="location-badge">Москва</span>
                 <span class="location-name">СК Drive</span>
               </div>
-            </div>
+            </a>
 
-            <div class="club-card">
+            <a class="club-card" data-club="pearl" target="_blank" rel="noopener">
               <div class="club-img-wrap">
                 <img src="assets/subbotnik-pearl.jpg" alt="СЦ Жемчужина" class="club-img" loading="lazy" />
               </div>
@@ -224,9 +195,9 @@
                 <span class="location-badge">Москва</span>
                 <span class="location-name">СЦ Жемчужина</span>
               </div>
-            </div>
+            </a>
 
-            <div class="club-card">
+            <a class="club-card" data-club="twelve" target="_blank" rel="noopener">
               <div class="club-img-wrap">
                 <img src="assets/subbotnik-12-10.jpg" alt="СК «12:10»" class="club-img" loading="lazy" />
               </div>
@@ -234,9 +205,9 @@
                 <span class="location-badge">Москва</span>
                 <span class="location-name">СК «12:10»</span>
               </div>
-            </div>
+            </a>
 
-            <div class="club-card">
+            <a class="club-card" data-club="arten" target="_blank" rel="noopener">
               <div class="club-img-wrap">
                 <img src="assets/subbotnik-Kazan.jpg" alt="СК Артен" class="club-img" loading="lazy" />
               </div>
@@ -244,7 +215,7 @@
                 <span class="location-badge location-badge--city">Казань</span>
                 <span class="location-name">СК Артен</span>
               </div>
-            </div>
+            </a>
 
           </div>
           <div class="clubs-nav">
@@ -284,6 +255,7 @@
         </div>
         <a href="https://t.me/squashsubbotnik" class="btn-primary" target="_blank" rel="noopener">Написать в Telegram</a>
       </div>
+      <img src="assets/man-with-hands-up.png" class="section-illo illo-handsup" alt="" aria-hidden="true" />
     </section>
 
     <!-- ===== JOIN ===== -->
@@ -293,49 +265,69 @@
         <h2>1300+ ИГРОКОВ<br>УЖЕ ВНУТРИ</h2>
         <div class="join-actions">
           <a href="https://t.me/squashsubbotnik" class="btn-join" target="_blank" rel="noopener">Узнай свой рейтинг</a>
-          <div class="store-badges store-badges--light">
-            <button class="btn-badge btn-badge--light" disabled aria-label="App Store — скоро">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-              App Store
-            </button>
-            <button class="btn-badge btn-badge--light" disabled aria-label="Google Play — скоро">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.18 23.76c.3.17.65.19.98.08l12.15-7.01-2.69-2.69-10.44 9.62zm-1.1-20.1a1.5 1.5 0 0 0-.08.47v15.74c0 .17.03.33.08.47l.07.07 8.82-8.82v-.2L2.15 3.59l-.07.07zm19.16 8.43-2.54-1.47-2.97 2.97 2.97 2.97 2.57-1.48c.73-.42.73-1.57-.03-1.99zM4.16.24 16.31 7.25l-2.69 2.69L3.18.32c.33-.11.68-.09.98.08z"/></svg>
-              Google Play
-            </button>
-            <button class="btn-badge btn-badge--light" disabled aria-label="RuStore — скоро">
-              <span class="badge-mono" aria-hidden="true">Р</span>
-              RuStore
-            </button>
-          </div>
         </div>
       </div>
     </section>
 
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <p class="footer-logo">СКВОШ СУББОТНИК</p>
-        <p class="footer-tagline">прогресс начинается в игре</p>
-      </div>
-      <div class="footer-right">
-        <nav class="footer-nav" aria-label="Навигация в футере">
-          <a href="#why">Рейтинг</a>
-          <a href="#how">Как работает</a>
-          <a href="#for-whom">Для кого</a>
-          <a href="#where">Клубы</a>
-          <a href="#organizers">Организаторам</a>
-          <a href="contacts.html">Контакты</a>
-        </nav>
-        <div class="footer-legal">
-          <a href="privacy.html">Политика конфиденциальности</a>
-          <a href="terms.html">Пользовательское соглашение</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <!-- ===== DOWNLOAD MODAL ===== -->
+  <div class="modal-overlay" id="downloadModal" role="dialog" aria-modal="true" aria-labelledby="modalHeading">
+    <div class="modal-card">
 
+      <button class="modal-close" id="modalClose" aria-label="Закрыть">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="1" y1="1" x2="12" y2="12"/><line x1="12" y1="1" x2="1" y2="12"/>
+        </svg>
+      </button>
+
+      <p class="eyebrow">скачать приложение</p>
+      <h2 class="modal-heading" id="modalHeading">СКВОШ<br>СУББОТНИК</h2>
+
+      <div class="modal-stores">
+
+        <a class="modal-store-btn" id="storeIos" href="#" target="_blank" rel="noopener">
+          <span class="modal-store-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          </span>
+          <div class="modal-store-text">
+            <span class="modal-store-name">App Store</span>
+            <span class="modal-store-status">Скоро</span>
+          </div>
+        </a>
+
+        <a class="modal-store-btn" id="storeAndroid" href="#" target="_blank" rel="noopener">
+          <span class="modal-store-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.18 23.76c.3.17.65.19.98.08l12.15-7.01-2.69-2.69-10.44 9.62zm-1.1-20.1a1.5 1.5 0 0 0-.08.47v15.74c0 .17.03.33.08.47l.07.07 8.82-8.82v-.2L2.15 3.59l-.07.07zm19.16 8.43-2.54-1.47-2.97 2.97 2.97 2.97 2.57-1.48c.73-.42.73-1.57-.03-1.99zM4.16.24 16.31 7.25l-2.69 2.69L3.18.32c.33-.11.68-.09.98.08z"/></svg>
+          </span>
+          <div class="modal-store-text">
+            <span class="modal-store-name">Google Play</span>
+            <span class="modal-store-status">Скоро</span>
+          </div>
+        </a>
+
+        <a class="modal-store-btn" id="storeRustore" href="#" target="_blank" rel="noopener">
+          <span class="modal-store-icon">
+            <svg width="22" height="22" viewBox="0 0 20 20" aria-hidden="true">
+              <rect x="0.75" y="0.75" width="18.5" height="18.5" rx="4.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+              <path fill="currentColor" d="M6 5.5h5.2c1.8 0 3.1 1.2 3.1 2.9 0 1.1-.6 2.1-1.6 2.6L15 15.5h-2.4l-2.1-4H8v4H6V5.5zm2 2v2.6h3.1c.8 0 1.4-.55 1.4-1.3s-.6-1.3-1.4-1.3H8z"/>
+            </svg>
+          </span>
+          <div class="modal-store-text">
+            <span class="modal-store-name">RuStore</span>
+            <span class="modal-store-status">Скоро</span>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div id="footer-mount"></div>
+
+  <script src="config.js"></script>
+  <script src="layout.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
