@@ -359,6 +359,8 @@ section { padding-block: clamp(64px, 8vw, 120px); }
 }
 
 .problem-cell {
+  display: flex;
+  align-items: center;
   padding: clamp(16px, 2vw, 22px) clamp(20px, 2.5vw, 28px);
   border-radius: 14px;
   font-family: "Cruinn", sans-serif;
@@ -504,7 +506,7 @@ section { padding-block: clamp(64px, 8vw, 120px); }
 
 .club-img-wrap {
   aspect-ratio: 1 / 1;       /* square container */
-  background: #111;          /* fallback while loading */
+  background: rgba(244, 238, 226, 0.06);  /* soft placeholder while loading */
   overflow: hidden;
 }
 
