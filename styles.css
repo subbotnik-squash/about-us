@@ -986,6 +986,141 @@ section { padding-block: clamp(64px, 8vw, 120px); }
   color: rgba(32, 32, 32, 0.45);
 }
 
+/* Legal documents (privacy, terms) */
+.legal-meta {
+  margin-top: 14px;
+  font-family: "Cruinn", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(32, 32, 32, 0.45);
+}
+.legal-body {
+  background: var(--beige);
+  padding-top: 0;
+  padding-bottom: clamp(80px, 10vw, 140px);
+}
+.legal-content {
+  max-width: 760px;
+  font-family: "Cruinn", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(32, 32, 32, 0.8);
+  counter-reset: legal-section;
+  overflow-wrap: break-word;
+}
+.legal-content h2 {
+  counter-increment: legal-section;
+  font-weight: 800;
+  font-size: clamp(19px, 2.4vw, 24px);
+  line-height: 1.25;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--black);
+  margin: clamp(44px, 6vw, 64px) 0 20px;
+}
+.legal-content h2:first-child { margin-top: 0; }
+.legal-content h2::before {
+  content: counter(legal-section) ". ";
+  color: var(--red);
+}
+.legal-content p { margin: 10px 0; }
+.legal-content a {
+  color: var(--red);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.legal-content a:hover { color: var(--red-dark); }
+.legal-content ol {
+  list-style: none;
+  counter-reset: legal-item;
+  margin: 0;
+  padding: 0;
+}
+.legal-content ol ol {
+  margin-top: 10px;
+  padding-left: 1.8em;
+}
+.legal-content ol > li {
+  counter-increment: legal-item;
+  margin: 10px 0;
+}
+.legal-content ol > li::before {
+  content: counter(legal-section) "." counters(legal-item, ".") ".";
+  margin-right: 0.45em;
+  font-weight: 700;
+  color: var(--black);
+}
+.legal-content ul {
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
+}
+.legal-content ul > li {
+  position: relative;
+  padding-left: 1.4em;
+  margin: 6px 0;
+}
+.legal-content ul > li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--black);
+}
+.legal-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.legal-content th,
+.legal-content td {
+  border: 1px solid rgba(32, 32, 32, 0.14);
+  padding: 12px 14px;
+  vertical-align: top;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.legal-content th {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(32, 32, 32, 0.05);
+}
+.legal-table-group td {
+  font-weight: 700;
+  color: var(--black);
+}
+@media (max-width: 640px) {
+  .legal-content thead { display: none; }
+  .legal-content table,
+  .legal-content tbody,
+  .legal-content tr,
+  .legal-content td { display: block; width: 100%; }
+  .legal-content tr { margin-bottom: 14px; }
+  .legal-content td + td { border-top: none; }
+  .legal-content td[data-label]::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(32, 32, 32, 0.5);
+  }
+  .legal-table-group { margin-bottom: 0; }
+}
+.legal-content .legal-date {
+  margin-top: clamp(72px, 9vw, 110px);
+  font-weight: 600;
+  color: rgba(32, 32, 32, 0.5);
+}
+
 /* =====================================================
    BRAND ILLUSTRATIONS
    ===================================================== */

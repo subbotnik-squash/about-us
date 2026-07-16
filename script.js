@@ -21,61 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-  // ── Download modal ─────────────────────────────────
-  var modalOverlay = document.getElementById('downloadModal');
-  var modalClose   = document.getElementById('modalClose');
-
-  if (modalOverlay) {
-
-    // Update store buttons from config.js → LINKS.app
-    var storeMap = [
-      { id: 'storeIos',     url: LINKS.app.ios },
-      { id: 'storeAndroid', url: LINKS.app.android },
-      { id: 'storeRustore', url: LINKS.app.rustore }
-    ];
-
-    storeMap.forEach(function (s) {
-      var el = document.getElementById(s.id);
-      if (!el) return;
-      if (s.url) {
-        el.href = s.url;
-        el.querySelector('.modal-store-status').textContent = 'Доступно';
-      } else {
-        el.classList.add('store-soon');
-      }
-    });
-
-    function openModal() {
-      modalOverlay.classList.add('modal--open');
-      document.body.style.overflow = 'hidden';
-      modalClose.focus();
-    }
-
-    function closeModal() {
-      modalOverlay.classList.remove('modal--open');
-      document.body.style.overflow = '';
-    }
-
-    // Open on CTA clicks (prevent href navigation)
-    document.querySelectorAll('.btn-cta, .btn-join, .btn-header-cta').forEach(function (btn) {
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        openModal();
-      });
-    });
-
-    modalClose.addEventListener('click', closeModal);
-    modalOverlay.addEventListener('click', function (e) {
-      if (e.target === modalOverlay) closeModal();
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && modalOverlay.classList.contains('modal--open')) {
-        closeModal();
-      }
-    });
-  }
-
-
+  // Модалка «Скачать приложение» живёт в layout.js (общая для всех страниц)
 
   // ── Clubs carousel — infinite auto-scroll ─────────────
   (function () {
