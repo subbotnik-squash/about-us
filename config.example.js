@@ -15,11 +15,11 @@ var LINKS = {
   // Основной Telegram-канал
   telegram: '',
 
-  // Приложение в магазинах (заполни при релизе)
+  // Приложение в магазинах (пустая строка = «Скоро» в модалке)
   app: {
-    ios:     '',   // 'https://apps.apple.com/...'
-    android: '',   // 'https://play.google.com/store/...'
-    rustore: ''    // 'https://apps.rustore.ru/...'
+    ios:     '',   // 'https://apps.apple.com/ru/app/id<AppleID>'
+    android: '',   // 'https://play.google.com/store/apps/details?id=com.subbotnik.app'
+    rustore: ''    // 'https://www.rustore.ru/catalog/app/com.subbotnik.app'
   },
 
   // Telegram-группы клубов
